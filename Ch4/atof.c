@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
+//converting a string to a double
 double atof(char s[]);
 
 int main(){

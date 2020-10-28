@@ -35,6 +35,9 @@ int main(){
                     push(pop() / op2);
                 else
                     printf("Undefined\n");
+            case '%':
+                op2 = pop();
+                push(pop() % op2);
             case '\n':
                 printf("\t%.8g\n", pop());
                 break;
@@ -82,11 +85,11 @@ int getop(char s[]){
     i = 0;
     if(isdigit(c))
         while(isdigit(s[++i] = c = getch()))
-            //printf("%c\n", c);
+            //printf("%d\n", i);
             ;
     if(c == '.')
         while(isdigit(s[++i] = c = getch()))
-            //printf("%c\n", c);
+            //printf("%d\n", i);
             ;
     s[i] = '\0';
     if(c != EOF)

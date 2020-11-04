@@ -17,6 +17,7 @@ int main(int argc, char *argv[]){
     if(argc > 1 && strcmp(argv[1], "-n") == 0) //但存在-n参数时，按照数值大小排序
         numeric = 1;
     if((nlines = readlines(lineptr, MAXLINES)) >= 0){
+        printf("nlines = %d\n", nlines);
         myqsort((void **)lineptr, 0, nlines - 1, (int (*)(void*, void*))(numeric ? numcmp : strcmp));
         writelines(lineptr, nlines);
         return 0;
@@ -94,7 +95,7 @@ int mygetline(char s[], int lim){
 
     for (i = 0; i < lim && (c = getchar()) != EOF && c != '\n'; i++)
         s[i] = c;
-    if (c == 'n') {
+    if (c == '\n') {
         s[i++] = c;
     }
     s[i] = '\0';
